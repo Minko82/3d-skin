@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "cycles_requested": 6,
+  "valid_cycles": 0,
+  "median_delta": 0.0,
+  "band_abs": 0,
+  "samples_path": "artifacts/repeatability/test2_20260416_204349_samples.csv",
+  "cycles_path": "artifacts/repeatability/test2_20260416_204349_cycles.csv"
+}

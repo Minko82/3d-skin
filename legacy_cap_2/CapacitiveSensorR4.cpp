@@ -99,7 +99,7 @@ int CapacitiveSensor::SenseOneCycle(void)
 	pinMode(rPin, INPUT);
 	pinMode(rPin, OUTPUT);
 	digitalWrite(rPin, LOW);
-	delayMicroseconds(100);
+	delayMicroseconds(1000);
 	pinMode(rPin, INPUT);
 	digitalWrite(sPin, HIGH);
 	interrupts();

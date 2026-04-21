@@ -1,0 +1,13 @@
+{
+  "status": "interrupted",
+  "port": "/dev/cu.usbmodem1101",
+  "baud": 115200,
+  "started_at": "2026-04-16T00:10:40-06:00",
+  "completed_at": "2026-04-16T00:13:58-06:00",
+  "sample_count": 0,
+  "cycle_count": 0,
+  "event_count": 0,
+  "invalid_cycles": [],
+  "samples_file": "artifacts/repeatability/test2_20260416_001040_samples.csv",
+  "cycles_file": "artifacts/repeatability/test2_20260416_001040_cycles.csv"
+}
