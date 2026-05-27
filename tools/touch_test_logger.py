@@ -49,8 +49,14 @@ def find_arduino_port():
             candidates.append(p.device)
     if candidates:
         return candidates[0]
-    # Fallback: return any /dev/ttyACM* or /dev/ttyUSB* on Linux/Mac
-    for pattern in ("/dev/ttyACM*", "/dev/ttyUSB*"):
+    # Fallback glob patterns — macOS first, then Linux
+    for pattern in (
+        "/dev/tty.usbmodem*",   # macOS (Arduino Uno R4, Mega, etc.)
+        "/dev/tty.usbserial*",  # macOS (CH340 / FTDI clones)
+        "/dev/tty.wchusbserial*",
+        "/dev/ttyACM*",         # Linux
+        "/dev/ttyUSB*",         # Linux
+    ):
         matches = sorted(glob.glob(pattern))
         if matches:
             return matches[0]
@@ -85,7 +91,7 @@ def log_touch_test(port, baud, output_path, duration):
 
     with open(output_path, "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
-        writer.writerow(["timestamp", "sensor_1", "sensor_5", "sensor_7"])
+        writer.writerow(["timestamp", "elapsed_ms", "sensor_1", "sensor_5", "sensor_7"])
 
         try:
             while True:
@@ -114,13 +120,15 @@ def log_touch_test(port, baud, output_path, duration):
                     print(f"  [skip] Non-integer values: {line!r}")
                     continue
 
+                now = time.time()
                 ts = datetime.now().isoformat(timespec="milliseconds")
 
                 if start_time is None:
-                    start_time = time.time()
+                    start_time = now
                     print("Recording…  (Ctrl+C to stop)\n")
 
-                writer.writerow([ts, s1, s5, s7])
+                elapsed_ms = round((now - start_time) * 1000, 1)
+                writer.writerow([ts, elapsed_ms, s1, s5, s7])
                 csvfile.flush()          # write immediately so data isn't lost on Ctrl+C
                 row_count += 1
 
