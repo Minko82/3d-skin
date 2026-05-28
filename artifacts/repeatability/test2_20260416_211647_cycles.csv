@@ -1,7 +1,0 @@
-cycle,contact_mean,contact_samples_count,release_timeout_rate,valid
-1,192575.5,2,0.0,False
-2,64263.0,2,0.0,False
-3,34301.0,2,0.0,False
-4,17390.0,1,0.0,False
-5,17277.0,1,0.0,False
-6,198628.5,2,1.0,True

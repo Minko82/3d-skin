@@ -1,4 +1,0 @@
-run_ms,cycle,phase,phase_elapsed_ms,raw_ch1,raw_ch2,raw_ch3,raw_ch4,raw_ch5,raw_ch6,raw_ch7,norm_ch1,norm_ch2,norm_ch3,norm_ch4,norm_ch5,norm_ch6,norm_ch7,all_pad_aggregate
-6512,1,CONTACT,4512,-2,-2,-2,153544,214657,-2,300835,-2,-2,-2,153544,214657,-2,300835,95575
-28629,3,RELEASE,1629,-2,-2,-2,453809,514965,-2,297651,-2,-2,-2,453809,514965,-2,297651,180917
-50328,5,RELEASE,3328,-2,-2,-2,180648,315012,-2,279119,-2,-2,-2,180648,315012,-2,279119,110682
