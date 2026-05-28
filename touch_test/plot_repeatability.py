@@ -279,8 +279,7 @@ def make_figure(
         ax.yaxis.grid(True, color="#E8E8E8", lw=0.8, zorder=0)
         ax.set_axisbelow(True)
 
-        node_n = CHANNELS[ci].split('_')[1]
-        ax.set_ylabel(f"{y_label_prefix}\nNode {node_n}",
+        ax.set_ylabel(f"{y_label_prefix}\nNode {ci + 1}",
                       rotation=0, ha="left", va="center",
                       fontsize=FONTSIZE_AXIS_LABEL)
         ax.yaxis.set_label_coords(-0.36, 0.5)
@@ -316,7 +315,7 @@ def make_figure(
         columnspacing=2.0,
     )
 
-    touch_labels = ["Node 1 Contact", "Node 5 Contact", "Node 7 Contact"]
+    touch_labels = ["Node 1 Contact", "Node 2 Contact", "Node 3 Contact"]
     y_top_fig = axes[0].get_position().y1
     y_bot_fig = axes[-1].get_position().y0
 
