@@ -1,0 +1,106 @@
+# ═══════════════════════════════════════════════════════════════════════
+#  Proximity Skin Configuration
+#  This file defines which skins exist, how they connect, and all
+#  runtime settings.  CLI arguments override values set here.
+# ═══════════════════════════════════════════════════════════════════════
+
+# ── Skin definitions ─────────────────────────────────────────────────
+# Each entry defines a skin segment on the robot.
+#   skin_name     – must match the xacro macro name in skins.xacro
+#   link_attached – FK link index this skin is mounted on
+#   port          – UDP port the ESP32 sends data to
+#   label_prefix  – short prefix for sensor labels (e.g. L1-0, L1-1, …)
+#   enabled       – set to false to hide this skin and all its sensors
+skins:
+  - skin_name: link1_skin
+    link_attached: 1
+    port: 5004
+    label_prefix: L1
+    enabled: false
+
+  - skin_name: link2_skin
+    link_attached: 2
+    port: 5005
+    label_prefix: L2
+    enabled: true
+
+  - skin_name: link3_skin
+    link_attached: 3
+    port: 5006
+    label_prefix: L3
+    enabled: false
+
+  - skin_name: link5_skin
+    link_attached: 5
+    port: 5007
+    label_prefix: L5
+    enabled: false
+
+  - skin_name: link5_part2_skin
+    link_attached: 5
+    port: 5008
+    label_prefix: L5P2
+    enabled: false
+
+  - skin_name: link6_skin
+    link_attached: 6
+    port: 5009
+    label_prefix: L6
+    enabled: false
+
+  - skin_name: link4_skin
+    link_attached: 4
+    port: 5010
+    label_prefix: L4
+    enabled: false
+
+# Disable individual sensors by name.
+# Names use label_prefix + index, e.g.: L1-0, L2-2, L5P2-5
+disabled_sensors: []
+# disabled_sensors:
+#   - L2-2
+
+# ── Visualizer settings ─────────────────────────────────────────────
+# Initial robot joint pose: "ready" or "zero"
+start_pose: ready
+
+# Color mode for the point cloud: "sensor", "time", or "trail"
+color_mode: sensor
+
+# Show sensor name labels in the 3D scene
+show_labels: true
+
+# Slowly orbit the camera around the scene
+camera_pan: false
+
+# Camera pan speed in degrees per tick (only used when camera_pan is true)
+pan_speed: 0.3
+
+# ── Replay settings ─────────────────────────────────────────────────
+# Path to an HDF5 file with recorded trajectories (null = live mode)
+replay: null
+
+# Episode index to start replay from
+episode: 0
+
+# Playback speed multiplier
+playback_speed: 1.0
+
+# Loop through episodes when replay reaches the end
+loop: true
+
+# When true, replay only drives joint positions; point cloud uses live UDP sensors.
+# When false, replay drives both joints and sensors from the HDF5 file.
+replay_joints_only: true
+
+# ── Live joint tracking ──────────────────────────────────────────────
+# Subscribe to /joint_states for real-time robot pose updates.
+# Disabled when replay is active (replay drives the pose instead).
+live_joints: false
+
+# ROS2 topic name for JointState messages
+joint_states_topic: /joint_states
+
+# ── Recording ────────────────────────────────────────────────────────
+# Record incoming sensor data to .npz / .mcap files
+record_data: true

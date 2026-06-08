@@ -614,7 +614,7 @@ def main():
         if df.empty:
             continue
         dfs.append(df)
-        run_names.append(f"Test {len(dfs)}")
+        run_names.append(f"Trial {len(dfs)}")
         print(f"  {path.name}  ({len(df)} samples, {df['elapsed_h'].max():.2f} h)")
 
     if not dfs:

@@ -274,17 +274,18 @@ def make_grid(
     from matplotlib.lines import Line2D
     legend_handles = [
         Line2D([0], [0], color=TEST_COLORS[ti % len(TEST_COLORS)],
-               lw=TRACE_LW + 0.6, label=f"Test {ti + 1}")
+               lw=TRACE_LW + 0.6, label=f"Trial {ti + 1}")
         for ti in range(max_tests)
     ]
     axes[0][n_cols - 1].legend(
         handles=legend_handles,
         loc="upper right",
+        bbox_to_anchor=(1.0, 1.0),
         fontsize=FONTSIZE_LEGEND,
         frameon=False,
         handlelength=1.6,
         handletextpad=0.4,
-        borderaxespad=0.3,
+        borderaxespad=0.0,
     )
 
     caption = (

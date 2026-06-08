@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<!-- Unified skin definitions for all robot links. Used by fr3_full_skin.xacro and visualizer. -->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- ========== link1_skin: skin on robot link1 (fr3_link1) ========== -->
+  <xacro:macro name="link1_skin" params="parent namespace">
+    <xacro:property name="use_mesh_file" value="true" />
+    <xacro:property name="mesh_file" value="package://proximity_point_motion/meshes/skin/link1_hybrid_dermis.stl" />
+    <xacro:property name="mass" value="0.3" />
+    <xacro:property name="body_width" value="0.3" />
+    <xacro:property name="body_height" value="0.1" />
+    <xacro:property name="sensor_length" value="0.05" />
+    <xacro:property name="sensor_radius" value="0.0" />
+    <xacro:include filename="$(find proximity_point_motion)/urdf/skin/self-cap-base.xacro" />
+    <xacro:dermis_base_macro robot_namespace="${namespace}" parent="${parent}" mass="${mass}"
+      body_width="${body_width}" body_height="${body_height}" use_mesh_file="${use_mesh_file}"
+      mesh_file="${mesh_file}">
+      <origin xyz="0 0 0" rpy="3.14159265359 0 0" />
+    </xacro:dermis_base_macro>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="0"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.106" normal_y="0.989" normal_z="-0.108">
+      <origin xyz="0.007 0.136 -0.007" rpy="-1.463 -3.142 -0.106" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="1"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.341" normal_y="0.683" normal_z="0.646">
+      <origin xyz="-0.024 0.113 0.045" rpy="0.869 -0.000 -2.678" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="2"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.777" normal_y="0.627" normal_z="-0.060">
+      <origin xyz="-0.050 0.113 -0.009" rpy="1.630 -0.000 -2.249" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="3"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.723" normal_y="0.688" normal_z="-0.056">
+      <origin xyz="0.052 0.111 -0.004" rpy="1.627 -0.000 2.332" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="4"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.458" normal_y="0.631" normal_z="0.627">
+      <origin xyz="0.029 0.112 0.042" rpy="0.893 0.000 2.514" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="5"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.222" normal_y="0.969" normal_z="0.105">
+      <origin xyz="0.009 0.064 0.131" rpy="1.466 0.000 2.917" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="6"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.133" normal_y="0.605" normal_z="-0.785">
+      <origin xyz="-0.009 0.112 -0.051" rpy="-0.668 -3.142 0.217" />
+    </xacro:self_cap_sensor>
+  </xacro:macro>
+
+  <!-- ========== link2_skin: skin on robot link2 (fr3_link2) ========== -->
+  <xacro:macro name="link2_skin" params="parent namespace">
+    <xacro:property name="use_mesh_file" value="true" />
+    <xacro:property name="mesh_file" value="package://proximity_point_motion/meshes/skin/link2_hybrid_dermis.stl" />
+    <xacro:property name="mass" value="0.3" />
+    <xacro:property name="body_width" value="0.3" />
+    <xacro:property name="body_height" value="0.1" />
+    <xacro:property name="sensor_length" value="0.05" />
+    <xacro:property name="sensor_radius" value="0.0" />
+    <xacro:include filename="$(find proximity_point_motion)/urdf/skin/self-cap-base.xacro" />
+    <xacro:dermis_base_macro robot_namespace="${namespace}" parent="${parent}" mass="${mass}"
+      body_width="${body_width}" body_height="${body_height}" use_mesh_file="${use_mesh_file}"
+      mesh_file="${mesh_file}">
+      <origin xyz="0 0 0" rpy="1.57079632679 0 0" />
+    </xacro:dermis_base_macro>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="0"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.723" normal_y="0.688" normal_z="-0.056">
+      <origin xyz="0.052 0.111 -0.004" rpy="1.627 -0.000 2.332" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="1"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.458" normal_y="0.631" normal_z="0.627">
+      <origin xyz="0.029 0.112 0.042" rpy="0.893 0.000 2.514" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="2"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.106" normal_y="0.989" normal_z="-0.108">
+      <origin xyz="0.007 0.136 -0.007" rpy="-1.463 -3.142 -0.106" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="3"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.222" normal_y="0.969" normal_z="0.105">
+      <origin xyz="0.009 0.064 0.131" rpy="1.466 0.000 2.917" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="4"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.133" normal_y="0.605" normal_z="-0.785">
+      <origin xyz="-0.009 0.112 -0.051" rpy="-0.668 -3.142 0.217" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="5"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.341" normal_y="0.683" normal_z="0.646">
+      <origin xyz="-0.024 0.113 0.045" rpy="0.869 -0.000 -2.678" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="6"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.777" normal_y="0.627" normal_z="-0.060">
+      <origin xyz="-0.050 0.113 -0.009" rpy="1.630 -0.000 -2.249" />
+    </xacro:self_cap_sensor>
+  </xacro:macro>
+
+  <!-- ========== link3_skin: skin on robot link3 (fr3_link3) ========== -->
+  <xacro:macro name="link3_skin" params="parent namespace">
+    <xacro:property name="use_mesh_file" value="true" />
+    <xacro:property name="mesh_file" value="package://proximity_point_motion/meshes/skin/link3_hybrid_dermis.stl" />
+    <xacro:property name="mass" value="0.3" />
+    <xacro:property name="body_width" value="0.3" />
+    <xacro:property name="body_height" value="0.1" />
+    <xacro:property name="sensor_length" value="0.05" />
+    <xacro:property name="sensor_radius" value="0.0" />
+    <xacro:include filename="$(find proximity_point_motion)/urdf/skin/self-cap-base.xacro" />
+    <xacro:dermis_base_macro robot_namespace="${namespace}" parent="${parent}" mass="${mass}"
+      body_width="${body_width}" body_height="${body_height}" use_mesh_file="${use_mesh_file}"
+      mesh_file="${mesh_file}">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:dermis_base_macro>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="0"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0" normal_y="0" normal_z="0">
+      <origin xyz="-0.025 0.052 -0.066" rpy="1.419 -0.000 -2.658" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="1"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0" normal_y="0" normal_z="0">
+      <origin xyz="0.057 0.110 -0.019" rpy="1.838 -0.000 -2.747" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="2"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0" normal_y="0" normal_z="0">
+      <origin xyz="0.124 0.101 0.009" rpy="1.410 0.000 2.306" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="3"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0" normal_y="0" normal_z="0">
+      <origin xyz="-0.052 -0.026 -0.068" rpy="1.422 0.000 -1.108" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="4"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0" normal_y="0" normal_z="0">
+      <origin xyz="0.045 0.079 0.038" rpy="0.800 0.000 -1.854" />
+    </xacro:self_cap_sensor>
+  </xacro:macro>
+
+  <!-- ========== link4_skin: skin on robot link4 (fr3_link4) ========== -->
+  <xacro:macro name="link4_skin" params="parent namespace">
+    <xacro:property name="use_mesh_file" value="true" />
+    <xacro:property name="mesh_file" value="package://proximity_point_motion/meshes/skin/link4_hybrid_dermis.stl" />
+    <xacro:property name="mass" value="0.3" />
+    <xacro:property name="body_width" value="0.3" />
+    <xacro:property name="body_height" value="0.1" />
+    <xacro:property name="sensor_length" value="0.05" />
+    <xacro:property name="sensor_radius" value="0.0" />
+    <xacro:include filename="$(find proximity_point_motion)/urdf/skin/self-cap-base.xacro" />
+    <xacro:dermis_base_macro robot_namespace="${namespace}" parent="${parent}" mass="${mass}"
+      body_width="${body_width}" body_height="${body_height}" use_mesh_file="${use_mesh_file}"
+      mesh_file="${mesh_file}">
+      <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+    </xacro:dermis_base_macro>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="0"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.982" normal_y="0.152" normal_z="-0.113">
+      <origin xyz="-0.141 0.008 0.079" rpy="1.684 -0.000 -1.725" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="1"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.154" normal_y="-0.845" normal_z="0.512">
+      <origin xyz="-0.011 -0.108 0.033" rpy="1.034 0.000 -0.180" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="2"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.342" normal_y="-0.922" normal_z="-0.179">
+      <origin xyz="-0.103 -0.052 0.058" rpy="1.751 0.000 -0.355" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="3"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.737" normal_y="-0.676" normal_z="0.017">
+      <origin xyz="0.043 -0.101 0.003" rpy="1.554 0.000 0.829" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="4"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.052" normal_y="-0.929" normal_z="-0.367">
+      <origin xyz="-0.004 -0.113 -0.025" rpy="1.946 0.000 -0.056" />
+    </xacro:self_cap_sensor>
+  </xacro:macro>
+
+  <!-- ========== link5_skin: skin on robot link5 (fr3_link5) ========== -->
+  <xacro:macro name="link5_skin" params="parent namespace">
+    <xacro:property name="use_mesh_file" value="true" />
+    <xacro:property name="mesh_file" value="package://proximity_point_motion/meshes/skin/link5_part1_hybrid_dermis.stl" />
+    <xacro:property name="mass" value="0.3" />
+    <xacro:property name="body_width" value="0.3" />
+    <xacro:property name="body_height" value="0.1" />
+    <xacro:property name="sensor_length" value="0.05" />
+    <xacro:property name="sensor_radius" value="0.0" />
+    <xacro:include filename="$(find proximity_point_motion)/urdf/skin/self-cap-base.xacro" />
+    <xacro:dermis_base_macro robot_namespace="${namespace}" parent="${parent}" mass="${mass}"
+      body_width="${body_width}" body_height="${body_height}" use_mesh_file="${use_mesh_file}"
+      mesh_file="${mesh_file}">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:dermis_base_macro>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="0"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0" normal_y="0" normal_z="0">
+      <origin xyz="-0.025 -0.042 -0.191" rpy="0.896 0.000 -0.487" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="1"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0" normal_y="0" normal_z="0">
+      <origin xyz="-0.002 0.022 -0.152" rpy="0.394 0.000 -0.062" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="2"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0" normal_y="0" normal_z="0">
+      <origin xyz="-0.000 0.058 -0.115" rpy="1.380 -0.000 -0.028" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="3"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0" normal_y="0" normal_z="0">
+      <origin xyz="0.027 -0.041 -0.191" rpy="0.901 -0.000 0.501" />
+    </xacro:self_cap_sensor>
+  </xacro:macro>
+
+  <!-- ========== link5_part2_skin: skin on robot link5 opposite side (fr3_link5) ========== -->
+  <xacro:macro name="link5_part2_skin" params="parent namespace">
+    <xacro:property name="use_mesh_file" value="true" />
+    <xacro:property name="mesh_file" value="package://proximity_point_motion/meshes/skin/link5_part2_hybrid_dermis.stl" />
+    <xacro:property name="mass" value="0.3" />
+    <xacro:property name="body_width" value="0.3" />
+    <xacro:property name="body_height" value="0.1" />
+    <xacro:property name="sensor_length" value="0.05" />
+    <xacro:property name="sensor_radius" value="0.0" />
+    <xacro:include filename="$(find proximity_point_motion)/urdf/skin/self-cap-base.xacro" />
+    <xacro:dermis_base_macro robot_namespace="${namespace}" parent="${parent}" mass="${mass}"
+      body_width="${body_width}" body_height="${body_height}" use_mesh_file="${use_mesh_file}"
+      mesh_file="${mesh_file}">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:dermis_base_macro>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="0"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.048" normal_y="0.984" normal_z="-0.173">
+      <origin xyz="-0.006 0.114 -0.097" rpy="-1.397 -3.142 0.049" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="1"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.374" normal_y="0.909" normal_z="-0.182">
+      <origin xyz="-0.021 0.102 -0.151" rpy="1.754 0.000 -2.751" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="2"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.048" normal_y="0.972" normal_z="-0.232">
+      <origin xyz="-0.002 0.135 -0.018" rpy="-1.337 3.142 0.049" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="3"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.376" normal_y="0.908" normal_z="-0.187">
+      <origin xyz="0.020 0.103 -0.148" rpy="1.758 -0.000 2.749" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="4"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.864" normal_y="0.412" normal_z="0.289">
+      <origin xyz="0.049 0.108 0.014" rpy="1.278 0.000 2.016" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="5"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.865" normal_y="0.414" normal_z="0.285">
+      <origin xyz="-0.050 0.106 0.016" rpy="1.282 0.000 -2.017" />
+    </xacro:self_cap_sensor>
+  </xacro:macro>
+
+  <!-- ========== link6_skin: skin on robot link6 (fr3_link6) ========== -->
+  <xacro:macro name="link6_skin" params="parent namespace">
+    <xacro:property name="use_mesh_file" value="true" />
+    <xacro:property name="mesh_file" value="package://proximity_point_motion/meshes/skin/link6_hybrid_dermis.stl" />
+    <xacro:property name="mass" value="0.3" />
+    <xacro:property name="body_width" value="0.3" />
+    <xacro:property name="body_height" value="0.1" />
+    <xacro:property name="sensor_length" value="0.05" />
+    <xacro:property name="sensor_radius" value="0.0" />
+    <xacro:include filename="$(find proximity_point_motion)/urdf/skin/self-cap-base.xacro" />
+    <xacro:dermis_base_macro robot_namespace="${namespace}" parent="${parent}" mass="${mass}"
+      body_width="${body_width}" body_height="${body_height}" use_mesh_file="${use_mesh_file}"
+      mesh_file="${mesh_file}">
+      <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+    </xacro:dermis_base_macro>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="0"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.232" normal_y="-0.972" normal_z="0.041">
+      <origin xyz="0.087 -0.053 0.008" rpy="1.530 0.000 0.234" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="1"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.226" normal_y="-0.717" normal_z="0.660">
+      <origin xyz="-0.012 -0.050 0.038" rpy="0.850 0.000 -0.306" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="2"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.018" normal_y="-1.000" normal_z="-0.024">
+      <origin xyz="0.027 -0.064 0.008" rpy="1.595 0.000 -0.018" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="3"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.411" normal_y="0.912" normal_z="0.019">
+      <origin xyz="0.110 0.047 0.009" rpy="1.552 -0.000 2.718" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="4"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="0.890" normal_y="-0.455" normal_z="0.015">
+      <origin xyz="0.134 -0.022 0.007" rpy="1.556 0.000 1.098" />
+    </xacro:self_cap_sensor>
+    <xacro:self_cap_sensor robot_namespace="${namespace}" parent="${namespace}_skin" sensor_number="5"
+      sensor_radius="${sensor_radius}" sensor_length="${sensor_length}" normal_x="-0.618" normal_y="-0.771" normal_z="-0.155">
+      <origin xyz="-0.031 -0.054 -0.011" rpy="1.726 -0.000 -0.675" />
+    </xacro:self_cap_sensor>
+  </xacro:macro>
+
+</robot>

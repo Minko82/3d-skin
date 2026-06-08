@@ -1,0 +1,6 @@
+numpy>=2.0
+PyYAML>=6.0
+pyqtgraph>=0.14.0
+PyOpenGL>=3.1.0
+PyQt5>=5.15
+mcap
